@@ -67,19 +67,19 @@
 		
 	</style>
 <body>
-<div id="header">
+<div id="header" >
 	<div id="tabpos">
 		<a href="http://youtube.com"><div id="tabs">
 			<p>Projects</p>
 		</div></a>
-		<div id="tabs">
-				<p>About</p>
+		<div id="tabs" onclick="tabClickDown(this)">
+				<p id="tab2" >About</p>
 		</div>
-		<div id="tabs">
-				<p>Cool Pix</p>
+		<div id="tabs" onclick="tabClickDown(this)">
+				<p id="tab3">Cool Pix</p>
 		</div>
-		<div id="tabs">
-				<p>Donate</p>
+		<div id="tabs" onclick="tabClickDown(this)">
+				<p id="tab4">Donate</p>
 		</div>
 	</div>
 </div>
@@ -92,4 +92,15 @@
 	</div>
 </div>
 </body>
+
+<script>
+	<!--document.getElementById("tab1").addEventListener("mousedown",tabClickDown(tab1);
+	<!--document.getElementById("tab2").addEventListener("mouse
+	
+	
+	function tabClickDown(element){
+		(element.style.backgroundColor == 'red') ? element.style.backgroundColor = "#C2D98B": element.style.backgroundColor = 'red';
+	}
+</script>
+
 </html>
