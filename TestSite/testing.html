@@ -3,150 +3,183 @@
 <head>
 	<style>
 
-		.moving_tab {
+	.moving_tab {
 
-			/* Stuff to add for growing */
-		    -webkit-transition: width .5s;
-		    transition: width .5s;
+		/* Stuff to add for growing */
+		-webkit-transition: width .5s;
+		transition: width .5s;
 
-			width: 60px;
-		    height: 60px;
-		    margin-bottom: 35px;
-		    box-shadow: 0px 10px 20px #848484;
-		    border-right: 1px solid #1C1C1C;
-		    border-bottom: 1px solid #1C1C1C;
-		    border-top: 1px solid #1C1C1C;
-		}
+		width: 60px;
+		height: 60px;
+		margin-bottom: 35px;
+		box-shadow: 0px 10px 20px #848484;
+		border-right: 1px solid #1C1C1C;
+		border-bottom: 1px solid #1C1C1C;
+		border-top: 1px solid #1C1C1C;
+	}
 
-		.moving_tab p{
+	.moving_tab p{
 
-			/* Adding fade in effect */
-			-moz-transition: all .1s ease-in;
-			-o-transition: all .1s ease-in;
-			-webkit-transition: all .1s ease-in;
-			transition: all .1s ease-in;
+		/* Adding fade in effect */
+		-moz-transition: all .1s ease-in;
+		-o-transition: all .1s ease-in;
+		-webkit-transition: all .1s ease-in;
+		transition: all .1s ease-in;
 
-			position: absolute;
-			width:60px;
-			height:60px;
-			opacity: 0;
-			text-align:left;
-			line-height: 60px;
-			padding-left: 4px;
-		}
+		position: absolute;
+		width:60px;
+		height:60px;
+		opacity: 0;
+		text-align:left;
+		line-height: 60px;
+		padding-left: 4px;
+	}
 
-		.moving_tab p:hover{
+	.moving_tab p:hover{
 
-			/* Adding fade out effect */
-			-moz-transition: all .5s ease-in;
-			-o-transition: all .5s ease-in;
-			-webkit-transition: all .5s ease-in;
-			transition: all .5s ease-in;
+		/* Adding fade out effect */
+		-moz-transition: all .5s ease-in;
+		-o-transition: all .5s ease-in;
+		-webkit-transition: all .5s ease-in;
+		transition: all .5s ease-in;
 
-			opacity: 1;
-			width:130px;
-			visibility: visible;
-			color:white;
-			line-height: 60px;
-		}
+		opacity: 1;
+		width:130px;
+		visibility: visible;
+		color:white;
+		line-height: 60px;
+	}
 
-		#image_over{
-			float:right;
-			width:100px;
-			background:red;
-			height:100%;
-		}
+	#image_over{
+		float:right;
+		width:100px;
+		background:red;
+		height:100%;
+	}
 
-		.moving_tab:hover {
-    		width: 130px;
-		}	
+	.moving_tab:hover {
+		width: 130px;
+	}	
 
-		* {
-			font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-			margin:0;
-			padding:0;
-		}
+	* {
+		font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+		margin:0;
+		padding:0;
+	}
 
-		#content{
-			height:2000px;
-		}
+	#content{
+		height:2000px;
+	}
 
-		#side_bar{
-			margin-top: 100px;
-			position: absolute;
-			float:left;
-			height:500px;
-			width:100px;
-		}
+	#side_bar{
+		position:fixed;
+		margin-top: 100px;
 
-		.title_image{
-			width:75%;
-			height:85%;
-			margin-left:auto;
-			margin-right:auto;
-			display:block;
-			margin-top:30px;
-			border: 1px solid black;
-			box-shadow: 0px 10px 20px #848484;
-		}
+		float:left;
+		height:500px;
+		width:100px;
+	}
 
-		#square_image{
-			float:right;
-			background: red;
-			height:100%;
-			width:100px;
-		}
+	.title_image{
+		width:75%;
+		height:85%;
+		margin-left:auto;
+		margin-right:auto;
+		display:block;
+		margin-top:30px;
+		border: 1px solid black;
+		box-shadow: 0px 10px 20px #848484;
+	}
 
-		#wrap{
-			white-space: nowrap;
-			overflow: hidden;
-		}
+	#square_image{
+		float:right;
+		background: red;
+		height:100%;
+		width:100px;
+	}
 
-		#top_bar{
-			width:100%;
-			height:45px;
-			background:#424242;
-			box-shadow: 0px 10px 20px #848484;
-		}
+	#wrap{
+		white-space: nowrap;
+		overflow: hidden;
+	}
 
-		.drop_down_menu{
-			list-style-type:none;
-		}
+	#top_bar{
+		width:100%;
+		height:45px;
+		background:#424242;
+		box-shadow: 0px 10px 20px #848484;
+	}
 
-		.drop_down_menu ul {
-			list-style-type: none;
-			overflow: hidden;
-		}
+	.drop_down_menu{
+		list-style-type:none;
+	}
 
-		.drop_down_menu li {
-			float: left;
-		}
+	.drop_down_menu ul {
+		list-style-type: none;
+		overflow: hidden;
+	}
 
-		.drop_down_menu a {
+	.drop_down_menu li {
+		float: left;
+	}
 
-			/* Adding fade in effect */
-			-moz-transition: all .12s ease-in;
-			-o-transition: all .12s ease-in;
-			-webkit-transition: all .12s ease-in;
-			transition: all .12s ease-in;
+	.drop_down_menu a {
 
-			font-size:90%;
-			text-decoration: none;
-			display: block;
-			width: 100px;
-			height:45px;
-			
-			line-height: 45px;
-			text-align: center;	
-			background:#424242;
-			color: inherit;
-			color:#848484;
-		}
+		/* Adding fade in effect */
+		-moz-transition: all .12s ease-in;
+		-o-transition: all .12s ease-in;
+		-webkit-transition: all .12s ease-in;
+		transition: all .12s ease-in;
 
-		.drop_down_menu a:hover{
-			background:#6E6E6E;
-			color:white;
-		}
+		font-size:90%;
+		text-decoration: none;
+		display: block;
+		width: 100px;
+		height:45px;
+
+		line-height: 45px;
+		text-align: center;	
+		background:#424242;
+		color: inherit;
+		color:#848484;
+	}
+
+	.drop_down_menu a:hover{
+		background:#6E6E6E;
+		color:white;
+	}
+
+	.search {
+		float: right;
+
+		margin-left: 100px;
+		padding-left: 5px;
+		padding-right: 5px;
+		width:300px;
+		margin-top:6px;
+		height:32px;
+		background:white;
+		border:none;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+
+	.button {
+		margin-right: 10px;
+		float:right;
+		margin-top:6px;
+		height:32px;
+		width:50px;
+		border:none;
+		background-color:gray;
+		color:white;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.button:hover  {
+		background-color:red;
+	}
 
 	</style>
 </head>
@@ -155,29 +188,34 @@
 
 	<div id="top_bar">
 		<ul span class = "drop_down_menu">
-			<li><a href="#">Edit</a></li>
-			<li><a href="#">View</a></li>
-			<li><a href="#">Tools</a></li>
-			<li><a href="#">Help</a></li>
+			<li><a href="#">Top Pics</a></li>
+			<li><a href="#">New Pics</a></li>
+			<li><a href="#">Featured Pics</a></li>
 		</ul>
 
-		<p style="float:right;padding-right:100px;color:white;">Our Cool Page</p>
+		<form>
+			<input class = "button" type="button" value="Search">
+			<input class = "search" type="text" placeholder="Search..." required>
+			
+		</form>
+
+		<p style="float:right;padding-right:100px;color:white;"></p>
 	</div>
 
 	<div id="side_bar">
 		
 		<a href="#">
-		<div class="moving_tab" style="background:#61210B;">
-		<p>Home</p>
-			<img src="home.png" alt="Home" style="width:50px;height:50px;float:right;padding-top:5px;padding-right:5px;">
-		</div>
+			<div class="moving_tab" style="background:#61210B;">
+				<p>Home</p>
+				<img src="home.png" alt="Home" style="width:50px;height:50px;float:right;padding-top:5px;padding-right:5px;">
+			</div>
 		</a>
 
 		<a href="#">
-		<div class="moving_tab" style="background:#61210B;">
-		<p>Dontate</p>
-			<img src="donate.png" alt="Donate" style="width:50px;height:50px;float:right;padding-top:5px;padding-right:5px;">
-		</div>
+			<div class="moving_tab" style="background:#61210B;">
+				<p>Dontate</p>
+				<img src="donate.png" alt="Donate" style="width:50px;height:50px;float:right;padding-top:5px;padding-right:5px;">
+			</div>
 		</a>
 
 		<div class="moving_tab" style="background:#61210B;">
@@ -187,16 +225,15 @@
 	</div>
 
 	<div class="title_image">
-
 		<img src="stuff.jpg" alt="Train Tracks" style="width:100%;height:100%;">
-		</div>
 	</div>
-	
-	<div id="content">
-	</div>
+</div>
+
+<div id="content">
+</div>
 
 
-	
+
 </body>
 
 </html>
