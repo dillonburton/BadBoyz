@@ -19,6 +19,7 @@
 		}
 
 		#nav {
+				position:relative;
 				color:white;
 				font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 				line-height:30px;
@@ -34,17 +35,20 @@
 			}
 			
 		#page{	
-				background-color:red;
-				width:250px;
+				position:relative;
+				background-color:blue;
+				width:800px;
+				height:900px;
 				margin: 0 auto;
 				padding:10px;
 				border-style:double;
 				border-width:5px;
-				width:850px;
-				height:1000px;
+				
+				
 		}
 		
 		#tabpos{
+				
 				width:436px;
 				height:75px;
 				margin-left:auto;
@@ -52,6 +56,7 @@
 		}
 		
 		#tabs{
+				
 				background-color:#C2D98B;
 				width:100px;
 				height:50px;
@@ -66,41 +71,53 @@
 		
 		
 	</style>
+<head>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		
+		
+		$('[id="tabs"]').hover(function(){
+				$(this).animate({height:'90px'},"slow");
+				
+		},
+		function(){
+				$(this).animate({height:'50px'},"slow");
+		});
+	
+	});
+	</script>
+</head>
 <body>
 <div id="header" >
 	<div id="tabpos">
 		<a href="http://youtube.com"><div id="tabs">
 			<p>Projects</p>
 		</div></a>
-		<div id="tabs" onclick="tabClickDown(this)">
+		<div id="tabs" >
 				<p id="tab2" >About</p>
 		</div>
-		<div id="tabs" onclick="tabClickDown(this)">
+		<div id="tabs" >
 				<p id="tab3">Cool Pix</p>
 		</div>
-		<div id="tabs" onclick="tabClickDown(this)">
+		<div id="tabs" >
 				<p id="tab4">Donate</p>
 		</div>
 	</div>
 </div>
 <div id="nav">
-<p>sup bitches</p>
+<p>sup yo</p>
 </div>
 <div id="section">
 	<div id="page">
 	<p>sup</p>
+	<p>This is a paragraph</p>
+	<p>This is another paragraph</p>
+	Name:
 	</div>
 </div>
 </body>
 
-<script>
-	<!--document.getElementById("tab1").addEventListener("mousedown",tabClickDown(tab1);
-	<!--document.getElementById("tab2").addEventListener("mouse
-	
-	
-	function tabClickDown(element){
-		(element.style.backgroundColor == 'red') ? element.style.backgroundColor = "#C2D98B": element.style.backgroundColor = 'red';
-	}
-</script>
+
 
 </html>
