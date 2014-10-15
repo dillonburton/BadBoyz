@@ -124,21 +124,37 @@
 		}
 	}
 	</script>
+	<script>
+        var allRadios = document.getElementsByName('radios');
+        var booRadio;
+        var x = 0;
+        for(x = 0; x < allRadios.length; x++){
+
+            allRadios[x].onclick = function() {
+                if(booRadio == this){
+                    this.checked = false;
+                    booRadio = null;
+                }else{
+                    booRadio = this;
+                }
+            };
+        }
+    </script>
 </head>
 <body>
 <div id="header" >
 	<div id="tabpos">
 		<a href="http://youtube.com"><div id="tabs">
-			<p>Projects</p>
+			<p>File</p>
 		</div></a>
 		<div id="tabs" >
-				<p id="tab2" >About</p>
+				<p id="tab2" >Edit</p>
 		</div>
 		<div id="tabs" >
-				<p id="tab3">Cool Pix</p>
+				<p id="tab3">Help</p>
 		</div>
 		<div id="tabs" >
-				<p id="tab4">Donate</p>
+				<p id="tab4">About</p>
 		</div>
 	</div>
 </div>
@@ -151,6 +167,11 @@
 	City: <input type="text" name="city"><br>
 	Email: <input type="text" name="email">
 	<input type="submit" value="Submit">
+</form>
+<form action="">
+<input type="radio" name="stage" value="stage1">Stage 1<br>
+<input type="radio" name="stage" value="stage2">Stage 2<br>
+<input type="radio" name="stage" value="stage3">Stage 3
 </form>
 </body>
 
