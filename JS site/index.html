@@ -1,92 +1,13 @@
 <!DOCTYPE html>
 <html>
-	<style>
-		#header {
-				font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-				background-color:#28AF63;
-				color:black;
-				text-align:center;
-				padding:5px;
-				height:100px;
-				width:100%;
-				margin-bottom:10px;
-				}
-				
-		#section {
-				font-family: Futura, "Trebuchet MS", Arial, sans-serif;	
-				padding-left:100px;
-				width:100%;
-		}
-
-		#nav {
-				position:relative;
-				color:white;
-				font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-				line-height:30px;
-				background-color:#2E2E2E;
-				height:1000px;
-				width:180px;
-				border-width:5px;	
-    			border-style:double;
-				float:left;
-				padding:5px;
-				text-align:center;
-				
-			}
-			
-		#page{	
-				position:relative;
-				background-color:blue;
-				width:800px;
-				height:900px;
-				margin: 0 auto;
-				padding:10px;
-				border-style:double;
-				border-width:5px;
-				
-				
-		}
-		
-		#tabpos{
-				
-				width:436px;
-				height:75px;
-				margin-left:auto;
-				margin-right:auto;
-		}
-		
-		#tabs{
-				
-				background-color:#C2D98B;
-				width:100px;
-				height:50px;
-				line-height:21px;
-				vertical-align:middle;
-				border-radius:5px;
-				font-family:"Trebuchet MS", Helvetica, sans-serif;
-				border:2px solid black;		
-				float:left;
-				margin-right:5px;
-		}
-		
-		
-	</style>
 <head>
+	<link rel="stylesheet" href="style.css"/>
+
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="jcanvas.min.js"></script>
+	<script src="jquery-ui.js"></script>
 	<script>
 	$(document).ready(function(){
-		
-		
-		$('[id="tabs"]').hover(function(){
-				$(this).animate({height:'90px'},"slow");
-				
-		},
-		function(){
-				$(this).animate({height:'50px'},"slow");
-		});
-		
-		<!--$("input").prop('disabled',true);
 		
 		$('canvas').drawRect({
 			layer:true,
@@ -103,6 +24,7 @@
 					
 	});
 	</script>
+	
 	<script>
 	function validateForm(){
 		var x = document.forms["myForm"]["name"].value; <!--name field 
@@ -142,26 +64,36 @@
     </script>
 </head>
 <body>
-<div id="header" >
-	<div id="tabpos">
-		<a href="http://youtube.com"><div id="tabs">
-			<p>File</p>
-		</div></a>
-		<div id="tabs" >
-				<p id="tab2" >Edit</p>
-		</div>
-		<div id="tabs" >
-				<p id="tab3">Help</p>
-		</div>
-		<div id="tabs" >
-				<p id="tab4">About</p>
-		</div>
-	</div>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='#'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Products</span></a>
+      <ul>
+         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+            <ul>
+               <li><a href='#'><span>Sub Product</span></a></li>
+               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+            </ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href='#'><span>About</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+
 </div>
 <div id="nav">
 <p>sup yo</p>
 </div>
 <canvas width='350' height='300' position=relative></canvas>
+
 <form name="myForm" onsubmit="return validateForm()">
 	Name: <input type="text" name="name"><br>
 	City: <input type="text" name="city"><br>
