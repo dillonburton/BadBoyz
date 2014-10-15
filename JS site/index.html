@@ -50,7 +50,7 @@
 		}
 	}
 	</script>
-	
+
 	<script>
 		function validateField(select){
 			var myForm = document.forms["myForm"];
@@ -65,31 +65,83 @@
 	
 		}
 	</script>
+
+	<script>
+        var allRadios = document.getElementsByName('radios');
+        var booRadio;
+        var x = 0;
+        for(x = 0; x < allRadios.length; x++){
+
+            allRadios[x].onclick = function() {
+                if(booRadio == this){
+                    this.checked = false;
+                    booRadio = null;
+                }else{
+                    booRadio = this;
+                }
+            };
+        }
+    </script>
+	<script>
+		var x = document.getElementsByName('stage1');
+		var y = document.getElementsByName('stage2');
+		var z = document.getElementsByName('stage3');
+		var menu1 = document.getElementByName('pos1');
+		var menu2 = document.getElementByName('pos2');
+		var menu3 = document.getElementByName('pos3');
+		if(x.checked)
+		{
+			menu1.disabled=true;
+		}
+		else if(y.checked)
+		{
+			menu2.disabled=true;
+		}
+		else if(z.checked)
+		{
+			menu3.disabled=true;
+		}
+	
+	
+	</script
+
 </head>
 <body>
 
 <div id='cssmenu'>
 <ul>
-   <li><a href='#'><span>Home</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Products</span></a>
+      <li class='active has-sub1'><a href='#'><span>File</span></a>
       <ul>
-         <li class='has-sub'><a href='#'><span>Site 1</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Site</span></a></li>
-               <li class='last'><a href='#'><span>Sub Site</span></a></li>
-            </ul>
+         <li id="pos1" class='has-sub1'><a href='#'><span>View</span></a>
          </li>
-         <li class='has-sub'><a href='#'><span>Site 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Site</span></a></li>
-               <li class='last'><a href='#'><span>Sub Site</span></a></li>
-            </ul>
+         <li id="pos2" class='has-sub1'><a href='#'><span>Options</span></a>
          </li>
       </ul>
    </li>
-   <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='#'><span>Contact</span></a></li>
+      <li class='active has-sub2'><a href='#'><span>Edit</span></a>
+      <ul>
+         <li id="pos3" class='has-sub2'><a href='#'><span>View</span></a>
+         </li>
+         <li id="pos4" class='has-sub2'><a href='#'><span>Options</span></a>
+         </li>
+      </ul>
+   </li>
+      <li class='active has-sub3'><a href='#'><span>Contact</span></a>
+      <ul>
+         <li id="pos5" class='has-sub3'><a href='#'><span>View</span></a>
+         </li>
+         <li id="pos6" class='has-sub3'><a href='#'><span>Options</span></a>
+         </li>
+      </ul>
+   </li>
+      <li class='active has-sub4'><a href='#'><span>Help</span></a>
+      <ul>
+         <li id="pos7" class='has-sub4'><a href='#'><span>Get Help...</span></a>
+         </li>
+      </ul>
+   </li>
 </ul>
+
 </div>
 <div id="nav">
 <p>sup yo</p>
@@ -110,6 +162,17 @@
 	<input type="submit" value="Submit" disabled=true >
 </form>
 
+
+<div align="center">
+<form action="">
+<input type="radio" name="stage" id="stage1">Stage 1
+<input type="radio" name="stage" id="stage2">Stage 2
+<input type="radio" name="stage" id="stage3">Stage 3
+</form>
+</div>
+<div id="scrollBox" align="center">
+
+</div>
 
 </body>
 

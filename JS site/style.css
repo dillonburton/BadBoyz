@@ -44,7 +44,14 @@
 				
 				
 		}
-		
+		#scrollBox{
+				width:auto;
+				height:300px;
+				overflow:scroll;
+				border-style:double;
+				border-radius:5px;
+				
+		}
 		#tabpos{
 				
 				width:436px;
