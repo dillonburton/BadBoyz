@@ -66,10 +66,20 @@
 		var x = document.getElementsByName('stage1');
 		var y = document.getElementsByName('stage2');
 		var z = document.getElementsByName('stage3');
-		var menu = document.getElementByName('pos1');
+		var menu1 = document.getElementByName('pos1');
+		var menu2 = document.getElementByName('pos2');
+		var menu3 = document.getElementByName('pos3');
 		if(x.checked)
 		{
-			menu.disabled('pos1','true')
+			menu1.disabled=true;
+		}
+		else if(y.checked)
+		{
+			menu2.disabled=true;
+		}
+		else if(z.checked)
+		{
+			menu3.disabled=true;
 		}
 	
 	
