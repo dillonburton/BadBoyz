@@ -24,7 +24,15 @@
 					
 		$(function() {
 			$('draggable').draggable();
-		})
+		});
+		
+		var scrBox = $("#scrollBox");
+		$('form').on("click focus blur keydown change",function(event) {
+			scrBox.append(event.type + "<br>");
+		});
+		$('#cssmenu').on("click focus blur keydown change",function(event) {
+			scrBox.append(event.type + "<br>");
+		});
 					
 	});
 	</script>
@@ -59,7 +67,7 @@
 			if(myControls[i].innerHTML!=null && (i+1) < myControls.length){
 				myControls[i+1].disabled=false;
 				
-			}else if(myControls[i].innerHTML==null && (i+1) < myControls.length){
+			}else{
 				myControls[i+1].disabled=true;
 			}
 	
@@ -103,7 +111,11 @@
 		}
 	
 	
-	</script
+	</script>
+	<script>
+		
+		
+	</script>
 
 </head>
 <body>
@@ -147,8 +159,8 @@
 <p>sup yo</p>
 </div>
 
-<div id="content" style="height:400px;">
-	<div id="draggable"></div>
+<div id="draggable">
+	<p>Hi</p>
 </div>
 
 <canvas width='350' height='300' position=relative></canvas>
@@ -171,7 +183,7 @@
 </form>
 </div>
 <div id="scrollBox" align="center">
-
+	
 </div>
 
 </body>
