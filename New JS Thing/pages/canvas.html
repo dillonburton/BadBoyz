@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="jcanvas.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		
+		$('canvas').drawRect({
+			layer:true,
+			name:'myBox',
+			fillStyle: 'black',
+			x: 100, y: 50,
+			width:0,height:0
+		});
+		
+		$('canvas').animateLayer('myBox', {x:150,y:150,width:100,height:60},2000,function(layer){
+						$(this).animateLayer(layer,{fillStyle:'blue',
+						x:250,y:100,rotate:320},'slow','swing');
+					});
+							
+	});
+	</script>
+
+</head>
+
+<body>
+	<canvas width='350' height='300' position=absolute></canvas>
+</body>
+
+</html>
