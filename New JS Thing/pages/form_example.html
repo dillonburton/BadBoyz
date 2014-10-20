@@ -18,6 +18,8 @@
 
 <head>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+
 <script>
 	function validateForm(){
 		var x = document.forms["myForm"]["name"].value; <!--name field 
@@ -40,8 +42,8 @@
 	}
 	</script>
 
-	<script>
-		function validateField(select){
+	<script type="text/javascript">
+function validateField(select){
 			var myForm = document.forms["myForm"];
 			var myControls = myForm.getElementsByTagName("input");
 			var i = select;
@@ -53,7 +55,7 @@
 			}
 	
 		}
-	</script>
+</script>
 	
 	<script>
 		function resetForm(){
@@ -69,11 +71,12 @@
 <body>
 
 <form name="myForm" onsubmit="return validateForm()">
-	Name: <input type="text" name="name" onchange="validateField(0)"><br>
-	City: <input type="text" name="city" disabled=true onchange="validateField(1)"><br>
-	Email: <input type="text" name="email" disabled=true onchange="validateField(2)">
-	<input type="button" name="cancel" value="Cancel" onclick=resetForm()>
+	Name: <input type="text" name="name" onchange=validateField(0)><br>
+	City: <input type="text" name="city" disabled=true onchange=validateField(1)><br>
+	Email: <input type="text" name="email" disabled=true onchange=validateField(2)>
+	
 	<input type="submit" name="submit" value="Submit" disabled=true >
+	<input type="button" name="cancel" value="Cancel" onclick=resetForm()>
 </form>
 
 </body>
