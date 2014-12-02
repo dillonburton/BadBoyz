@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="css/dropdown_menu.css">
+
+	<script type="text/javascript">
+		function switchToExample(fileName) {
+			document.getElementById("targetframe").src = fileName;
+			document.getElementById("selection").visibility = hidden;
+		}
+	</script>
+
+	<style>
+
+
+		body{
+			margin:0;
+			padding: 0;
+		}
+
+
+		.nav{
+			
+			float:left;
+			width:275px;
+			height:2000px;
+			
+			background: #2E2E2E;
+		}
+
+		.content{
+
+			box-sizing: border-box;
+			padding-right:15px;
+			padding-left: 290px;
+			padding-top:15px;
+			background: #1C1C1C;
+			height:2000px;
+
+		}
+
+
+
+		.title{
+			height:75px;
+			
+		}
+
+		.title p{
+			height:100%;
+			margin: 0;	
+			font-family: "Andale Mono", AndaleMono, monospace;
+			font-size:300%;
+			text-align:center;
+			line-height: 75px;
+			color: white;
+
+			/* Disable title text selection */
+			-webkit-user-select: none;  
+			-moz-user-select: none;    
+			-ms-user-select: none;      
+			user-select: none;
+		}
+
+		.links{
+			
+		}
+
+		.links #link{
+			padding-left:15px;
+			height: 50px;
+			font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+			color:gray;
+			
+		}
+
+		.links a{
+			color:inherit;
+			text-decoration: none;
+			font-size:130%;
+			font-weight: bold;
+			line-height: 50px;
+		}
+
+		.links #link:hover{
+			background:gray;
+			color:white;
+		}
+
+		.page{
+			width:100%;
+			height:1000px;
+			
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div class = "nav">
+		<div class = "title">
+			<p>&lt;/script&gt</p>
+		</div>
+
+	</br></br>
+
+	<div class = "links">
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/standard_locations.html')">Standard Locations</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/programming_standards.html')">Programming standards</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/tuts_examples.html')">Tutorials and examples</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/ide.html')">IDE's</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/debugging.html')">Debugging</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/unit_testing.html')">Unit testing</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/embeded_browsers.html')">Using embeded browsers</div></a>
+		<a href = "#"><div id = "link" onclick="switchToExample('pages/browser_compatibility.html')">Browser compatibility</div></a>
+
+	</div>
+</div>
+
+<div class = "content">
+	<div class = "menu_bar">
+
+		<div id = "left_menu">
+			<ul id="list">
+
+				<li>Examples
+					<ul id = "selection">
+						<li onclick="switchToExample('pages/local_file_access.html')">Local file access</li>
+						<li onclick = "switchToExample('pages/jquery.html')">JQuery</li>
+						<li onclick = "switchToExample('pages/canvas.html')">Canvas</li>
+						<li onclick="switchToExample('pages/drag_and_drop.html')">Drag and drop</li>
+						<li onclick = "switchToExample('pages/webgl.html')">WebGL</li>
+						<li onclick = "switchToExample('pages/form_example.html')">Form example</li>
+						<li onclick = "switchToExample('pages/menu_bar_manipulation.html')">Menu bar manipulation</li>
+					</ul>
+				</li>
+				<li>File
+					<ul>
+						<li id="listOpen">Open</li>
+						<li id="listSave">Save</li>
+					</ul>
+				</li>
+				<li>Edit
+					<ul>
+						<li id="listOptions">Options</li>
+						<li id="listSettings">Settings</li>
+					</ul>
+				</li>
+				<li>Help
+					<ul>
+						<li id="listInfo">Info</li>
+						<li id="listVersion">Version</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class = "page">
+			<iframe src="pages/local_file_access.html" id="targetframe" allowTransparency="true" scrolling="yes" frameborder="0" width = "100%" height = "100%" >
+			</iframe>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

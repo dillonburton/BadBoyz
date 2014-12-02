@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+	body{
+		margin:0;
+		padding:0;
+	}
+
+	.content{
+
+			
+
+		}
+
+</style>
+
+<head>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+
+<script>
+	function validateForm(){
+		var x = document.forms["myForm"]["name"].value; <!--name field 
+		if(x == null || x == ""){
+			alert("Name field must be filled out");
+			return false;
+		}
+		var y = document.forms["myForm"]["city"].value; <!--city field 
+		if(y != "Kalamazoo"){
+			alert("Must enter Kalamazoo as city");
+			return false;
+		}
+		var z = document.forms["myForm"]["email"].value; <!--email field 
+		var atpos = z.indexOf("@");
+		var dotpos = z.lastIndexOf(".");
+		if(atpos < 1 || dotpos<atpos+2 || dotpos+2 > z.length) {
+			alert("Not a valid email address");
+			return false;
+		}
+	}
+	</script>
+
+	<script type="text/javascript">
+function validateField(select){
+			var myForm = document.forms["myForm"];
+			var myControls = myForm.getElementsByTagName("input");
+			var i = select;
+			if(myControls[i].innerHTML!=null && (i+1) < myControls.length){
+				myControls[i+1].disabled=false;
+				
+			}else{
+				myControls[i+1].disabled=true;
+			}
+	
+		}
+</script>
+	
+	<script>
+		function resetForm(){
+			$("input[name='city']").prop("disabled", true);
+			$("input[name='email']").prop("disabled", true);
+			$("input[name='city']").prop("disabled", true);
+			$("input[name='submit']").prop("disabled", true);
+		}
+	</script>
+
+</head>
+
+<body>
+
+<form name="myForm" onsubmit="return validateForm()">
+	Name: <input type="text" name="name" onchange=validateField(0)><br>
+	City: <input type="text" name="city" disabled=true onchange=validateField(1)><br>
+	Email: <input type="text" name="email" disabled=true onchange=validateField(2)>
+	
+	<input type="submit" name="submit" value="Submit" disabled=true >
+	<input type="button" name="cancel" value="Cancel" onclick=resetForm()>
+</form>
+
+</body>
+
+
+</html>
